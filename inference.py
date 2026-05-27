@@ -10,30 +10,11 @@ from transformers import (
     AutoModelForSequenceClassification
 )
 
-REAL_CSV_PATH = "dataset/real_news_with_labels.csv"
-FAKE_CSV_PATH = "dataset/fake_news.csv"
-
-RANDOM_SEED = 42
-TEST_SIZE = 0.15
-VAL_SIZE = 0.15
-
-DISTILBERT_MODEL_NAME = "distilbert-base-multilingual-cased"
 MAX_LENGTH = 192
 DISTILBERT_OUTPUT_DIR = "models/distilbert_fake_news_model"
 
 LOGREG_MODEL_PATH = "models/tfidf_logreg_fake_news.pkl"
 NB_MODEL_PATH = "models/tfidf_nb_fake_news.pkl"
-
-CLASSICAL_SAMPLE_SIZE = None
-DISTILBERT_SAMPLE_SIZE = None
-
-TRAIN_BATCH_SIZE = 4
-EVAL_BATCH_SIZE = 4
-GRADIENT_ACCUMULATION_STEPS = 2
-LEARNING_RATE = 2e-5
-NUM_EPOCHS = 2
-WEIGHT_DECAY = 0.01
-WARMUP_RATIO = 0.1
 
 LABEL_MAP = {
     0: "FAKE",
