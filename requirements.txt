@@ -1,5 +1,8 @@
 pandas
 numpy
+uvicorn
+pydantic
+fastapi
 scikit-learn
 joblib
 torch
