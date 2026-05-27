@@ -217,5 +217,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-distilbert_fake_news_model
-*.pkl
+# distilbert_fake_news_model
+# *.pkl
+checkpoint-*
