@@ -10,8 +10,8 @@ from transformers import (
     AutoModelForSequenceClassification
 )
 
-REAL_CSV_PATH = "real_news_with_labels.csv"
-FAKE_CSV_PATH = "fake_news.csv"
+REAL_CSV_PATH = "dataset/real_news_with_labels.csv"
+FAKE_CSV_PATH = "dataset/fake_news.csv"
 
 RANDOM_SEED = 42
 TEST_SIZE = 0.15
@@ -19,10 +19,10 @@ VAL_SIZE = 0.15
 
 DISTILBERT_MODEL_NAME = "distilbert-base-multilingual-cased"
 MAX_LENGTH = 192
-DISTILBERT_OUTPUT_DIR = "./distilbert_fake_news_model"
+DISTILBERT_OUTPUT_DIR = "models/distilbert_fake_news_model"
 
-LOGREG_MODEL_PATH = "./tfidf_logreg_fake_news.pkl"
-NB_MODEL_PATH = "./tfidf_nb_fake_news.pkl"
+LOGREG_MODEL_PATH = "models/tfidf_logreg_fake_news.pkl"
+NB_MODEL_PATH = "models/tfidf_nb_fake_news.pkl"
 
 CLASSICAL_SAMPLE_SIZE = None
 DISTILBERT_SAMPLE_SIZE = None

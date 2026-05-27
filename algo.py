@@ -39,8 +39,8 @@ from transformers import (
 
 warnings.filterwarnings("ignore")
 
-REAL_CSV_PATH = "real_news_with_labels.csv"
-FAKE_CSV_PATH = "fake_news.csv"
+REAL_CSV_PATH = "dataset/real_news_with_labels.csv"
+FAKE_CSV_PATH = "dataset/fake_news.csv"
 
 RANDOM_SEED = 42
 TEST_SIZE = 0.15
@@ -757,7 +757,7 @@ def main():
     else:
         metrics_df = plot_metric_comparison(
             results,
-            save_path="/metrics/model_metrics_comparison.png"
+            save_path="metrics/model_metrics_comparison.png"
         )
 
     print("\nMetrics summary:")
@@ -777,13 +777,13 @@ def main():
             plot_confusion_matrix(
                 r["confusion_matrix"],
                 r["model"],
-                save_path=f"/metrics/{safe_name}_confusion_matrix.png"
+                save_path=f"metrics/{safe_name}_confusion_matrix.png"
             )
         else:
             plot_confusion_matrix(
                 r["confusion_matrix"],
                 r["model"],
-                save_path=f"/metrics/{safe_name}_confusion_matrix.png"
+                save_path=f"metrics/{safe_name}_confusion_matrix.png"
             )
 
     if is_kaggle_environment():
@@ -794,19 +794,19 @@ def main():
             save_path="/kaggle/working/distilbert_training_history.png"
         )
     else:
-        plot_roc_curves(results, save_path="/metrics/roc_curves.png")
-        plot_precision_recall_curves(results, save_path="/metrics/precision_recall_curves.png")
+        plot_roc_curves(results, save_path="metrics/roc_curves.png")
+        plot_precision_recall_curves(results, save_path="metrics/precision_recall_curves.png")
         plot_distilbert_training_history(
             distilbert_artifacts.trainer,
-            save_path="/metrics/distilbert_training_history.png"
+            save_path="metrics/distilbert_training_history.png"
         )
 
     if is_kaggle_environment():
         metrics_df.to_csv("/kaggle/working/model_comparison.csv", index=False)
         print("\nSaved evaluation summary to /kaggle/working/model_comparison.csv")
     else:
-        metrics_df.to_csv("/metrics/model_comparison.csv", index=False)
-        print("\nSaved evaluation summary to /metrics/model_comparison.csv")
+        metrics_df.to_csv("metrics/model_comparison.csv", index=False)
+        print("\nSaved evaluation summary to metrics/model_comparison.csv")
 
     sample_headline = "Government announces urgent reform after major backlash"
     sample_contents = """

@@ -13,10 +13,10 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 warnings.filterwarnings("ignore")
 
 MAX_LENGTH = 192
-DISTILBERT_OUTPUT_DIR = "./distilbert_fake_news_model"
+DISTILBERT_OUTPUT_DIR = "models/distilbert_fake_news_model"
 
-LOGREG_MODEL_PATH = "tfidf_logreg_fake_news.pkl"
-NB_MODEL_PATH = "tfidf_nb_fake_news.pkl"
+LOGREG_MODEL_PATH = "models/tfidf_logreg_fake_news.pkl"
+NB_MODEL_PATH = "models/tfidf_nb_fake_news.pkl"
 
 LABEL_MAP = {
     0: "FAKE",
