@@ -5,8 +5,10 @@ import numpy as np
 import pandas as pd
 import torch
 
+
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
@@ -184,6 +186,14 @@ class PredictResponse(BaseModel):
     logistic_regression: ModelPrediction
     naive_bayes: ModelPrediction
     distilbert: ModelPrediction
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/health")
 def health(request: Request):
